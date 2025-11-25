@@ -1,0 +1,63 @@
+# Model arguments
+model_name_or_path: /fs-computility/video/shared/hf_weight/Qwen2.5-VL-7B-Instruct
+model_revision: main
+torch_dtype: bfloat16
+
+# LoRA configuration
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.1
+lora_target_modules: ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+lora_bias: "none"
+lora_task_type: "CAUSAL_LM"
+
+# Data training arguments
+dataset_name: VideoRFT-RL-Data.jsonl
+dataset_train_split: train
+dataset_test_split: test
+
+# GRPO training arguments
+bf16: true
+do_eval: true
+eval_strategy: "steps"
+eval_steps: 100
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+learning_rate: 1e-6
+log_level: info
+logging_steps: 1
+logging_strategy: steps
+lr_scheduler_type: "cosine"
+max_prompt_length: 16384
+max_completion_length: 1024
+max_steps: -1
+num_train_epochs: 1
+output_dir: ./log/VideoRFT-GRPO-LoRA
+overwrite_output_dir: true
+per_device_eval_batch_size: 1
+per_device_train_batch_size: 1
+save_steps: 100
+save_strategy: "steps"
+seed: 42
+warmup_ratio: 0.1
+
+# GRPO specific arguments
+beta: 0.04
+max_grad_norm: 5
+num_generations: 8
+temperature: 1.0
+
+# Reward functions
+reward_funcs: ["accuracy", "format", "semantic"]
+semantic: true
+len_control: true
+
+# Vision processing
+max_pixels: 401408
+min_pixels: 3136
+attn_implementation: flash_attention_2
+
+# DeepSpeed configuration
+deepspeed: local_scripts/zero3.json 

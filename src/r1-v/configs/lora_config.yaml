@@ -1,0 +1,25 @@
+# LoRA Configuration File
+# 这个文件包含了LoRA训练的所有配置参数
+
+# LoRA核心参数
+lora_r: 16                    # LoRA的秩，控制参数量
+lora_alpha: 32                # LoRA的缩放因子，通常设为r的2倍
+lora_dropout: 0.1             # LoRA层的dropout率
+lora_bias: "none"             # 是否训练偏置参数
+lora_task_type: "CAUSAL_LM"   # 任务类型
+
+# 目标模块配置
+lora_target_modules:
+  - "q_proj"      # Query投影层
+  - "v_proj"      # Value投影层  
+  - "k_proj"      # Key投影层
+  - "o_proj"      # Output投影层
+  - "gate_proj"   # Gate投影层
+  - "up_proj"     # Up投影层
+  - "down_proj"   # Down投影层
+
+# 可选：要保存的模块（通常不需要）
+lora_modules_to_save: null
+
+# 是否启用PEFT
+use_peft: true

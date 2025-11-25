@@ -1,0 +1,9 @@
+case_study/
+eval_data/
+eval_models/
+eval_results/
+plot/
+VKnowQA/
+VKnowU/
+VKVL/
+eval_VKVL.log
