@@ -27,9 +27,21 @@ Our work highlights visual knowledge as a missing cornerstone for developing mor
 </div>
 
 
-<!-- <div align="center">
-<img src="./images/dataset.png"  width="50%" />
-</div> -->
+
+## <a id="ToDo"> 🔧 ToDo</a>
+
+<!-- **状态**: ✅ 已完成 | 🚧 开发中 | ⏳ 计划中 -->
+
+
+⏳ Release the benchmark：[VKnowU](https://huggingface.co/datasets/Eurayka/VKnowU) 
+
+⏳ Release the training and evaluation codes of VideoKnow+
+
+⏳ Release the model weights of [🤗VideoKnow+](https://huggingface.co/Eurayka/VideoKnow)
+
+⏳ Release the 30K training datasets：[📀VKnowQA-CS-12K](https://huggingface.co/datasets/Eurayka/VKnowQA) and [📀VKnowQA-30K](https://huggingface.co/datasets/Eurayka/VKnowQA)
+
+
 
 ## <a id="Setup"> 🛠️ Set up</a>
 
@@ -124,10 +136,10 @@ python ./src/eval/calculate_bench.py
 
 We gratefully acknowledge the contributions of the open-source community, particularly [R1-V](https://github.com/Deep-Agent/R1-V) and [VideoRFT](https://github.com/QiWang98/VideoRFT).
 
-<!-- 
+
 ## 📚 Citations
 
 If you find this work helpful, please consider citing:
 
 ```
-``` -->
+```
