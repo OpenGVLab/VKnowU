@@ -66,9 +66,9 @@ This step can be skipped by directly using our pretrained SFT models, available 
 
 Next, perform reinforcement learning using the [📀VKnowQA-30K](https://huggingface.co/datasets/Eurayka/VKnowQA) dataset (using vLLM acceleration to enable faster training):
 
-1. Employ a external verifier MLLM for calculate visual knowledge reward and modify the corresponding api in [here](https://github.com/OpenGVLab/VKnowU/tree/main/src/r1-v/src/open_r1/grpo_caption.py).
+1. Employ an external verifier MLLM for calculate visual knowledge reward and modify the corresponding api in [here](https://github.com/OpenGVLab/VKnowU/tree/main/src/r1-v/src/open_r1/grpo_caption.py).
 
-2. 
+2. Run the RL scripts:
 ```bash
 bash ./src/scripts/run_grpo_vllm_qwen25vl.sh
 ```
