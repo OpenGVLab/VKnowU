@@ -1,8 +1,8 @@
 # 📊 VKnowU: Evaluating Visual Knowledge Understanding in Multimodal LLMs
 
 <p align="center">
-    </a>&nbsp&nbsp📖 <a href="https://arxiv.org/abs/2505.12434">ArXiv</a>
-    </a>&nbsp&nbsp │ &nbsp&nbsp📊 <a href="https://huggingface.co/datasets/Eurayka/VKnowU">VKnowU</a>
+    </a>&nbsp&nbsp📖 <a href="https://arxiv.org/abs/2511.20272">ArXiv</a>
+    </a>&nbsp&nbsp │ &nbsp&nbsp📊 <a href="https://huggingface.co/datasets/OpenGVLab/VKnowU">VKnowU</a>
     </a>&nbsp&nbsp │ &nbsp&nbsp📀 <a href="https://huggingface.co/datasets/Eurayka/VKnowQA">VKnowQA</a>
     </a>&nbsp&nbsp │ &nbsp&nbsp🤗 <a href="https://huggingface.co/Eurayka/VideoKnow">Video-Know+</a>
 </p>
@@ -17,7 +17,7 @@
 ## <a id="Overview"> 🔎 Overview</a>
 
 While Multimodal Large Language Models (MLLMs) have become adept at recognizing objects, they often lack the intuitive, human-like understanding of the world's underlying physical and social principles. This high-level vision-grounded semantics, which we term $\textbf{\textit{visual knowledge}}$, forms a bridge between perception and reasoning, yet remains an underexplored area in current MLLMs.
-To systematically evaluate this capability, we present [📊VKnowU](https://huggingface.co/datasets/Eurayka/VKnowU), a comprehensive benchmark featuring 1,680 questions in 1,249 videos, covering 8 core types of visual knowledge spanning both $\textit{world-centric}$ (e.g., intuitive physics) and $\textit{human-centric}$ (e.g., subjective intentions). Evaluation of 23 SOTA MLLMs reveals that leading models still fall short of human performance, with particularly notable gaps in the world-centric.
+To systematically evaluate this capability, we present [📊VKnowU](https://huggingface.co/datasets/OpenGVLab/VKnowU), a comprehensive benchmark featuring 1,680 questions in 1,249 videos, covering 8 core types of visual knowledge spanning both $\textit{world-centric}$ (e.g., intuitive physics) and $\textit{human-centric}$ (e.g., subjective intentions). Evaluation of 23 SOTA MLLMs reveals that leading models still fall short of human performance, with particularly notable gaps in the world-centric.
 To bridge this gap, we introduce a new dataset, [📀VKnowQA](https://huggingface.co/datasets/Eurayka/VKnowQA), and [🤗VideoKnow+](https://huggingface.co/Eurayka/VideoKnow), a baseline model that explicitly incorporates visual knowledge into MLLMs. VideoKnow+ follows a structured $\textit{See–Think–Answer}$ paradigm and adopts reinforcement learning with visual knowledge reward, achieving a +3.7\% improvement on VKnowU and consistent gains on MVBench, Video-MME, and MMVU.
 Our work highlights visual knowledge as a missing cornerstone for developing more generalizable MLLMs that can not only see but also truly understand our physical and social worlds.
 
@@ -33,9 +33,9 @@ Our work highlights visual knowledge as a missing cornerstone for developing mor
 <!-- **状态**: ✅ 已完成 | 🚧 开发中 | ⏳ 计划中 -->
 
 
-⏳ Release the benchmark：[VKnowU](https://huggingface.co/datasets/Eurayka/VKnowU) 
+✅ Release the benchmark：[VKnowU](https://huggingface.co/datasets/OpenGVLab/VKnowU) 
 
-⏳ Release the training and evaluation codes of VideoKnow+
+✅ Release the training and evaluation codes of VideoKnow+
 
 ⏳ Release the model weights of [🤗VideoKnow+](https://huggingface.co/Eurayka/VideoKnow)
 
@@ -106,7 +106,7 @@ You can configure these parameters in `src/qwen-vl-utils`.
 ### Evaluation Procedure
 
 #### 📊 VKnowU
-1. Download the video and json data from [VKnowU](https://huggingface.co/datasets/Eurayka/VKnowU) and organize them.
+1. Download the video and json data from [VKnowU](https://huggingface.co/datasets/OpenGVLab/VKnowU) and organize them.
 
 2. Run the evaluation on VKnowU:
 
@@ -132,6 +132,10 @@ bash ./src/eval_bench.sh
 python ./src/eval/calculate_bench.py
 ```
 
+<div align="center">
+<img src="./figs/eval.png" />
+</div>
+
 ## 🙏 Acknowledgements
 
 We gratefully acknowledge the contributions of the open-source community, particularly [R1-V](https://github.com/Deep-Agent/R1-V) and [VideoRFT](https://github.com/QiWang98/VideoRFT).
@@ -142,4 +146,13 @@ We gratefully acknowledge the contributions of the open-source community, partic
 If you find this work helpful, please consider citing:
 
 ```
+@misc{jiang2025vknowuevaluatingvisualknowledge,
+      title={VKnowU: Evaluating Visual Knowledge Understanding in Multimodal LLMs}, 
+      author={Tianxiang Jiang and Sheng Xia and Yicheng Xu and Linquan Wu and Xiangyu Zeng and Limin Wang and Yu Qiao and Yi Wang},
+      year={2025},
+      eprint={2511.20272},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.20272}, 
+}
 ```
