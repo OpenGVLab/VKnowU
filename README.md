@@ -146,13 +146,5 @@ We gratefully acknowledge the contributions of the open-source community, partic
 If you find this work helpful, please consider citing:
 
 ```
-@misc{jiang2025vknowuevaluatingvisualknowledge,
-      title={VKnowU: Evaluating Visual Knowledge Understanding in Multimodal LLMs}, 
-      author={Tianxiang Jiang and Sheng Xia and Yicheng Xu and Linquan Wu and Xiangyu Zeng and Limin Wang and Yu Qiao and Yi Wang},
-      year={2025},
-      eprint={2511.20272},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2511.20272}, 
-}
+coming soon
 ```
