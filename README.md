@@ -132,9 +132,9 @@ bash ./src/eval_bench.sh
 python ./src/eval/calculate_bench.py
 ```
 
-<div align="center">
+<!-- <div align="center">
 <img src="./figs/eval.png" />
-</div>
+</div> -->
 
 ## 🙏 Acknowledgements
 
