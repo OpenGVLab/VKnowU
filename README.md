@@ -32,10 +32,9 @@ Our work highlights visual knowledge as a missing cornerstone for developing mor
 
 <!-- **状态**: ✅ 已完成 | 🚧 开发中 | ⏳ 计划中 -->
 
-
-✅ Release the benchmark：[VKnowU](https://huggingface.co/datasets/OpenGVLab/VKnowU) 
-
 ✅ Release the training and evaluation codes of VideoKnow+
+
+⏳ Release the benchmark：[VKnowU](https://huggingface.co/datasets/OpenGVLab/VKnowU) 
 
 ⏳ Release the model weights of [🤗VideoKnow+](https://huggingface.co/Eurayka/VideoKnow)
 
