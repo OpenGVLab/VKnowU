@@ -4,5 +4,16 @@ eval_results/
 plot/
 VKnowQA/
 VKnowU/
+VKnowU-main/
 VKVL/
 eval_VKVL.log
+
+rjob/
+.cursor-server
+output/
+Video-VK+/
+gen_cot/
+VKBench_model/
+LLaVA*
+src/eval_new/
+eval_data_new/

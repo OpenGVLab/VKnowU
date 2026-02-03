@@ -204,7 +204,7 @@ if __name__ == "__main__":
     
     if "Qwen2-VL" in model_config.model_name_or_path:
         model = Qwen2VLForConditionalGeneration.from_pretrained(model_config.model_name_or_path, **model_kwargs)
-    elif "Qwen2.5-VL" or "VideoRFT" in model_config.model_name_or_path:
+    elif "Qwen2.5-VL" or "VKBench" in model_config.model_name_or_path:
         model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_config.model_name_or_path, **model_kwargs)
     else:
         model = AutoModelForVision2Seq.from_pretrained(model_config.model_name_or_path, **model_kwargs)

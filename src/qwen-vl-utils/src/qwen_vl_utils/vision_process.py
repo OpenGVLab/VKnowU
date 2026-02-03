@@ -36,23 +36,23 @@ QWENVL_EVAL = os.environ.get('QWENVL_EVAL', 'True')
 
 if QWENVL_EVAL != 'True':
     #! Training
+    # FPS_MIN_FRAMES = 16
     FPS_MAX_FRAMES = 16 # set to 32 for Evaluation
     VIDEO_MIN_PIXELS = 128 * 28 * 28  # set to 256 * 28 * 28 for Evaluation VideoRFT
     VIDEO_MAX_PIXELS = 128 * 28 * 28  # set to 256 * 28 * 28 for Evaluation VideoRFT
 else:
     #! Evaluation
-    FPS_MAX_FRAMES = 32 # set to 32 for Evaluation
+    # FPS_MIN_FRAMES = 32
+    # FPS_MAX_FRAMES = 32 # set to 32 for Evaluation
+    FPS_MAX_FRAMES = 128 # set to 32 for Evaluation
     VIDEO_MIN_PIXELS = 256 * 28 * 28  # set to 256 * 28 * 28 for Evaluation VideoRFT
     VIDEO_MAX_PIXELS = 256 * 28 * 28  # set to 256 * 28 * 28 for Evaluation VideoRFT
 
-FIX_FRAME = os.environ.get('FIX_FRAME', 'None')
-if FIX_FRAME != 'None':
-    FPS_MIN_FRAMES = int(FIX_FRAME)
-    FPS_MAX_FRAMES = int(FIX_FRAME)
-FIX_PIXELS = os.environ.get('FIX_PIXELS', 'None')
-if FIX_PIXELS != 'None':
-    VIDEO_MIN_PIXELS = int(FIX_PIXELS) * 28 * 28
-    VIDEO_MAX_PIXELS = int(FIX_PIXELS) * 28 * 28
+STANDARD_EVAL = os.environ.get('STANDARD_EVAL', False)
+if STANDARD_EVAL:
+    FPS_MAX_FRAMES = 32
+    VIDEO_MIN_PIXELS = 256 * 28 * 28  # set to 256 * 28 * 28 for Evaluation VideoRFT
+    VIDEO_MAX_PIXELS = 256 * 28 * 28  # set to 256 * 28 * 28 for Evaluation VideoRFT
 
 # Set the maximum number of video token inputs.
 # Here, 128K represents the maximum number of input tokens for the VLLM model.

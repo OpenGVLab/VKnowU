@@ -147,7 +147,7 @@ class Qwen2VLGRPOVLLMTrainerCaption(Trainer):
                 model = Qwen2VLForConditionalGeneration.from_pretrained(
                     model, **model_init_kwargs
                 )
-            elif "Qwen2.5-VL" or "VideoRFT" in model_id:
+            elif "Qwen2.5-VL" in model_id or "VKBench" in model_id:
                 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
                     model, **model_init_kwargs
                 )
@@ -200,7 +200,7 @@ class Qwen2VLGRPOVLLMTrainerCaption(Trainer):
                     self.ref_model = Qwen2VLForConditionalGeneration.from_pretrained(
                         model_id, **model_init_kwargs
                     )
-                elif "Qwen2.5-VL" or "VideoRFT" in model_id:
+                elif "Qwen2.5-VL" or "VKBench" in model_id:
                     self.ref_model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
                         model_id, **model_init_kwargs
                     )
@@ -222,12 +222,12 @@ class Qwen2VLGRPOVLLMTrainerCaption(Trainer):
 
         # Processing class
         if processing_class is None:
-            if "Qwen" in model_id or "Aria" in model_id or "VideoRFT" in model_id:
+            if "Qwen" in model_id or "Aria" in model_id or "VKBench" in model_id:
                 processing_class = AutoProcessor.from_pretrained(model_id)
                 pad_token_id = processing_class.tokenizer.pad_token_id
                 processing_class.pad_token_id = pad_token_id
                 processing_class.eos_token_id = processing_class.tokenizer.eos_token_id
-                if "Qwen" in model_id or "VideoRFT" in model_id:
+                if "Qwen" in model_id or "VKBench" in model_id:
                     processing_class.image_processor.max_pixels = max_pixels
                     processing_class.image_processor.min_pixels = min_pixels
             else:

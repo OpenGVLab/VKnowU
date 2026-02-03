@@ -111,7 +111,7 @@ def prepare_dataset(example: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
             "content": [
                 {
                     "type": example['data_type'],
-                    example['data_type']: "./VKnowQA/videos/" + str(example['qid']) + ".mp4"
+                    example['data_type']: "/mnt/shared-storage-user/jiangtianxiang/VKBench/VKnowQA/videos/" + str(example['qid']) + ".mp4"
                 },
                 {
                     "type": "text",
@@ -196,7 +196,7 @@ if __name__ == "__main__":
     
     if "Qwen2-VL" in model_config.model_name_or_path:
         model = Qwen2VLForConditionalGeneration.from_pretrained(model_config.model_name_or_path, **model_kwargs)
-    elif "Qwen2.5-VL" or "VideoRFT" in model_config.model_name_or_path:
+    elif "Qwen2.5-VL" or "VKBench" in model_config.model_name_or_path:
         model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_config.model_name_or_path, **model_kwargs)
     else:
         model = AutoModelForVision2Seq.from_pretrained(model_config.model_name_or_path, **model_kwargs)

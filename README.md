@@ -1,11 +1,21 @@
 # 📊 VKnowU: Evaluating Visual Knowledge Understanding in Multimodal LLMs
 
 <p align="center">
-    </a>&nbsp&nbsp📖 <a href="https://arxiv.org/abs/2511.20272">ArXiv</a>
-    </a>&nbsp&nbsp │ &nbsp&nbsp📊 <a href="https://huggingface.co/datasets/Eurayka/VKnowU">VKnowU</a>
-    </a>&nbsp&nbsp │ &nbsp&nbsp📀 <a href="https://huggingface.co/datasets/Eurayka/VKnowQA">VKnowQA</a>
-    </a>&nbsp&nbsp │ &nbsp&nbsp🤗 <a href="https://huggingface.co/Eurayka/VideoKnow">Video-Know+</a>
+    📖 <a href="https://arxiv.org/abs/2511.20272">ArXiv</a>
+    &nbsp;&nbsp;│&nbsp;&nbsp;
+    📊 <a href="https://huggingface.co/datasets/Eurayka/VKnowU">VKnowU</a>
+    &nbsp;&nbsp;│&nbsp;&nbsp;
+    📀 <a href="https://huggingface.co/datasets/Eurayka/VKnowQA">VKnowQA</a>
+    &nbsp;&nbsp;│&nbsp;&nbsp;
+    🤗 <a href="https://huggingface.co/Eurayka/VideoKnow">Video-Know+</a>
+    &nbsp;&nbsp;│&nbsp;&nbsp;
+    <a href="https://hub.opencompass.org.cn/dataset-detail/VKnowU"><img src="https://cdn.opencompass.org.cn/image/compass-hub/badge.svg" alt="OpenCompass" height="20" style="vertical-align: middle; margin-top: 0px;" /></a>
 </p>
+
+<!-- [![Paper](https://img.shields.io/badge/Paper-arXiv:2511.20272-b31b1b.svg)](https://arxiv.org/abs/2511.20272)
+[![VKnowU](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow.svg)](https://huggingface.co/datasets/Eurayka/VKnowU) -->
+
+
 
 <!-- 🚀✨🔧✅📝💡🔍📊📀 -->
 

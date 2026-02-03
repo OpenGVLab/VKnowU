@@ -119,7 +119,7 @@ class GRPOScriptArguments(ScriptArguments):
         },
     )
     visual_knowledge_ratio: Optional[float] = field(
-        default=1.0,
+        default=0.0,
         metadata={"help": "Ratio of visual knowledge reward to accuracy reward"},
     )
     
@@ -292,8 +292,8 @@ Provide only the single option letter (e.g., A, B, C, D, E, etc.) between the <a
 The output format should be: <answer> answer here </answer>.
 """
         ##! ToDo: change your own verifier model api
-        model_url = "https://sd2t9cj25ni4n75na4290.apigateway-cn-beijing.volceapi.com/v1/chat/completions" #!To change your own model api
-        api_key = "2ce8f136-861e-4ea9-8c30-5a57078d2ed8"
+        model_url = "http://s-20260123141314-t9wkv.ailab-ptdata.pjh-service.org.cn/v1/chat/completions" #!To change your own model api
+        api_key = "sk-test"
         payload = {
             "model": "Qwen2.5-VL-7B-Instruct",
             "messages": [
@@ -328,7 +328,7 @@ The output format should be: <answer> answer here </answer>.
             rewards[i] = 0.0
 
     for i in range(len(rewards)):
-        rewards[i] = rewards[i] * kwargs.get("visual_knowledge_ratio", 1.0)
+        rewards[i] = rewards[i] * kwargs.get("visual_knowledge_ratio", 0.0)
     return rewards
 
 def ngram_penalty_reward(completions, **kwargs):
@@ -538,8 +538,22 @@ The output format should be: <description> video description here </description>
     try:
         training_args.dataloader_drop_last = True
     except Exception:
-        # Be tolerant if the config object doesn’t expose this attribute
+        # Be tolerant if the config object doesn't expose this attribute
         pass
+
+    # Set logging_dir to separate runs folder from model weights
+    if not hasattr(training_args, 'logging_dir') or training_args.logging_dir is None:
+        # Create a separate logs directory at the same level as output_dir
+        output_dir = training_args.output_dir
+        # Get parent directory and create logs subdirectory
+        parent_dir = os.path.dirname(output_dir.rstrip('/'))
+        if not parent_dir:
+            parent_dir = os.path.dirname(os.path.abspath(output_dir))
+        logs_dir = os.path.join(parent_dir, 'logs', os.path.basename(output_dir.rstrip('/')))
+        training_args.logging_dir = logs_dir
+        # Create the directory if it doesn't exist
+        os.makedirs(logs_dir, exist_ok=True)
+        print(f"Logging directory set to: {logs_dir} (separate from model weights)")
 
     trainer_cls = Qwen2VLGRPOLoraTrainer if not training_args.use_vllm else Qwen2VLGRPOVLLMTrainerCaption
     print("using: ", trainer_cls)

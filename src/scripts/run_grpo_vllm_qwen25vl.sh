@@ -4,9 +4,9 @@ export DEBUG_MODE="true"
 export LOG_PATH="./vllm_run.txt"
 
 export QWENVL_EVAL=False
-QWEN_PATH='model after SFT'
-HF_DATASET='./VKnowQA/VKnowQA-30K.json'
-OUTPUT_DIR='./output/VideoKnow-GRPO'
+QWEN_PATH='/mnt/shared-storage-user/jiangtianxiang/VKBench/Video-VK+/SFT_SEE_THINK'
+HF_DATASET='/mnt/shared-storage-user/jiangtianxiang/VKBench/VKnowQA/VKnowQA-30K.json'
+OUTPUT_DIR='/mnt/shared-storage-user/jiangtianxiang/VKBench/output/VideoKnow'
 if [ ! -d "$OUTPUT_DIR" ]; then
  mkdir -p "$OUTPUT_DIR"
 fi
